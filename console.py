@@ -12,7 +12,9 @@ from models.place import Place
 from models.amenity import Amenity
 from models.review import Review
 
+
 def parse(arg):
+
     curly_match = re.search(r"\{(.*?)\}", arg)
     square_match = re.search(r"\[(.*?)\]", arg)
     if curly_match is None:
@@ -28,6 +30,7 @@ def parse(arg):
         result_list = [i.strip(",") for i in lexer]
         result_list.append(curly_match.group())
         return result_list
+
 
 class HBNBCommand(cmd.Cmd):
 
