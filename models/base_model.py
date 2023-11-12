@@ -12,7 +12,7 @@ class BaseModel:
     Base class that other classes inherit from, attrs: id, crtd_@, updt_@
     """
     def __init__(self, *args, **kwargs):
-        """ instantiation using random id and time, can also add attrs using kwargs """
+        """ instantiate using id and time, can also add attrs using kwargs """
         self.id = str(uuid.uuid4())
         self.created_at = datetime.now()
         self.updated_at = datetime.now()
@@ -31,7 +31,7 @@ class BaseModel:
                 else:
                     setattr(self, key, val)
         else:
-           pass
+            pass
 
     def __str__(self):
         """ Returns a string representation of an object """
